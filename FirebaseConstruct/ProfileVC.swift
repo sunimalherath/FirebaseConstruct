@@ -25,6 +25,21 @@ class ProfileVC: UIViewController {
     
     // IBActions
     @IBAction func saveBtnWasPressed(_ sender: Any) {
+        if nameTextField.text != "" || cityTextField.text != "" || webTextField.text != "" || bioTextView.text != "" {
+            var dbRef: DatabaseReference!
+            dbRef = Database.database().reference()
+            let userId = Auth.auth().currentUser?.uid
+            
+            dbRef.child("users/" + userId! + "/name").setValue(nameTextField.text)
+            dbRef.child("users/" + userId! + "/city").setValue(cityTextField.text)
+            dbRef.child("users/" + userId! + "/web").setValue(webTextField.text)
+            dbRef.child("users/" + userId! + "/bio").setValue(bioTextView.text)
+            
+            print("Profile data saved")
+        }
+        else {
+            print("Unable to save data")
+        }
     }
     @IBAction func logoutBtnWasPressed(_ sender: Any) {
         do{
