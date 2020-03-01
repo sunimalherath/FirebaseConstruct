@@ -21,6 +21,8 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // IBActions
     @IBAction func saveBtnWasPressed(_ sender: Any) {
     }
     @IBAction func logoutBtnWasPressed(_ sender: Any) {

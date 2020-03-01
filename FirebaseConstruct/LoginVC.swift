@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController {
 
@@ -19,9 +20,21 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    // IBActions
     @IBAction func loginBtnWasPressed(_ sender: Any) {
     }
     @IBAction func registerBtnWasPressed(_ sender: Any) {
+        if usernameTextField.text != "" || passwordTextField.text != "" {
+            Auth.auth().createUser(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (result, error) in
+                if error != nil {
+                    print(error!)
+                }
+                else {
+                    print("Account created")
+                }
+            }
+        }
     }
 }
 
