@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="FirebaseConstruct" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4eo-zR-DYt">
-                                <rect key="frame" x="20" y="175" width="335" height="69.333333333333314"/>
+                                <rect key="frame" x="20" y="131" width="335" height="69.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUd-so-HcL">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="27.333333333333332"/>
@@ -32,7 +32,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dxe-FW-V0Q">
-                                <rect key="frame" x="20" y="264.33333333333331" width="335" height="69.333333333333314"/>
+                                <rect key="frame" x="20" y="220.33333333333334" width="335" height="69.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-RT-hUp">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="27.333333333333332"/>
@@ -41,14 +41,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="feC-lO-LsQ">
-                                        <rect key="frame" x="0.0" y="35.333333333333371" width="335" height="34"/>
+                                        <rect key="frame" x="0.0" y="35.333333333333314" width="335" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZWb-WP-sWY">
-                                <rect key="frame" x="20" y="358.66666666666669" width="335" height="95"/>
+                                <rect key="frame" x="20" y="314.66666666666669" width="335" height="95"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4c-Gt-hjs">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
@@ -80,7 +80,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firebase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NF9-qt-p2z">
-                                <rect key="frame" x="20" y="94" width="335" height="41"/>
+                                <rect key="frame" x="20" y="50" width="335" height="41"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -103,6 +103,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cHN-PD-s5y"/>
                     <connections>
                         <outlet property="passwordTextField" destination="feC-lO-LsQ" id="owy-s6-bN5"/>
                         <outlet property="usernameTextField" destination="fyM-w8-nRt" id="vw5-kc-Pmz"/>
@@ -111,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.40000000000001" y="118.96551724137932"/>
+            <point key="canvasLocation" x="-124" y="12"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="tu6-LM-Nhs">
@@ -224,11 +225,12 @@
                         <outlet property="nameTextField" destination="vLo-rn-gNt" id="thG-zc-317"/>
                         <outlet property="profileImageView" destination="Pig-1q-uuO" id="Zgp-aN-hsq"/>
                         <outlet property="webTextField" destination="TtV-6J-Ntf" id="FIu-Eq-Ok6"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goLogin" id="8NQ-dR-HJK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YfS-VF-q8g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877.60000000000002" y="118.96551724137932"/>
+            <point key="canvasLocation" x="996" y="12"/>
         </scene>
     </scenes>
 </document>
