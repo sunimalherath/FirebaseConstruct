@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ProfileVC.swift
 //  FirebaseConstruct
 //
 //  Created by Sunimal Herath on 1/3/20.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ProfileVC: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        super.viewDidLoad()        
     }
-
-
 }
-
