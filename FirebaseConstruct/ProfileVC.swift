@@ -21,6 +21,8 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadProfileData()
     }
     
     // IBActions
@@ -52,6 +54,32 @@ class ProfileVC: UIViewController {
     }
     @IBAction func browseBtnWasPressed(_ sender: Any) {
         pickPhoto()
+    }
+    
+    private func loadProfileData() {
+        var dbRef: DatabaseReference!
+        dbRef = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        
+        dbRef.child("users/" + userID!).observe(.value) { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            self.nameTextField.text = value?["name"] as? String ?? ""
+            self.cityTextField.text = value?["city"] as? String ?? ""
+            self.webTextField.text = value?["web"] as? String ?? ""
+            self.bioTextView.text = value?["bio"] as? String ?? ""
+            
+            let imgRef = Storage.storage().reference().child("images/" + userID! + ".jpg")
+            
+            imgRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
+                if error != nil {
+                    print(error)
+                }
+                else {
+                    let image = UIImage(data: data!)
+                    self.profileImageView.image = image
+                }
+            }
+        }
     }
     
 }
