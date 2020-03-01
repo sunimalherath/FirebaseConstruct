@@ -43,7 +43,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="feC-lO-LsQ">
                                         <rect key="frame" x="0.0" y="35.333333333333371" width="335" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -106,6 +106,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="feC-lO-LsQ" id="owy-s6-bN5"/>
                         <outlet property="usernameTextField" destination="fyM-w8-nRt" id="vw5-kc-Pmz"/>
+                        <segue destination="rND-Ww-LvA" kind="show" identifier="goProfile" id="KzO-Ap-hyJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -117,18 +118,18 @@
             <objects>
                 <viewController id="rND-Ww-LvA" customClass="ProfileVC" customModule="FirebaseConstruct" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="725-ka-T4V">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pig-1q-uuO">
-                                <rect key="frame" x="137.66666666666666" y="150" width="100" height="100"/>
+                                <rect key="frame" x="137.66666666666666" y="106" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="aoz-50-hQp"/>
                                     <constraint firstAttribute="height" constant="100" id="pyn-Be-JHA"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uil-6W-YQ7">
-                                <rect key="frame" x="20" y="438.33333333333326" width="335" height="150"/>
+                                <rect key="frame" x="20" y="394.33333333333331" width="335" height="149.99999999999994"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="6pd-0X-89O"/>
@@ -139,19 +140,19 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUJ-QK-P6Q">
-                                <rect key="frame" x="20" y="403" width="335" height="27.333333333333314"/>
+                                <rect key="frame" x="20" y="359" width="335" height="27.333333333333314"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoG-fC-EmO">
-                                <rect key="frame" x="20" y="94" width="335" height="41"/>
+                                <rect key="frame" x="20" y="50" width="335" height="41"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1vg-LN-P3Q">
-                                <rect key="frame" x="20" y="270" width="335" height="118"/>
+                                <rect key="frame" x="20" y="226" width="335" height="118"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vLo-rn-gNt">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
@@ -171,7 +172,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCd-YT-82B">
-                                <rect key="frame" x="20" y="618.33333333333337" width="335" height="40"/>
+                                <rect key="frame" x="20" y="574.33333333333337" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eZY-ED-nYQ"/>
@@ -184,7 +185,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g14-b8-ItQ">
-                                <rect key="frame" x="20" y="60" width="335" height="30"/>
+                                <rect key="frame" x="20" y="16" width="335" height="30"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logoutBtnWasPressed:" destination="rND-Ww-LvA" eventType="touchUpInside" id="vgx-yv-43s"/>
@@ -216,6 +217,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cW6-yz-uKF"/>
                     </view>
+                    <navigationItem key="navigationItem" id="U3U-kL-bnl"/>
                     <connections>
                         <outlet property="bioTextView" destination="uil-6W-YQ7" id="sUa-td-67E"/>
                         <outlet property="cityTextField" destination="a4D-5h-nSD" id="Z63-dn-rBx"/>

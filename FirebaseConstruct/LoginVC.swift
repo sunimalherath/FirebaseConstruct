@@ -23,7 +23,19 @@ class LoginVC: UIViewController {
     
     // IBActions
     @IBAction func loginBtnWasPressed(_ sender: Any) {
+        if usernameTextField.text != "" || passwordTextField.text != "" {
+            Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (result, error) in
+                if error != nil {
+                    print(error)
+                }
+                else {
+                    print("Login successful")
+                    self.performSegue(withIdentifier: "goProfile", sender: self)
+                }
+            }
+        }
     }
+    
     @IBAction func registerBtnWasPressed(_ sender: Any) {
         if usernameTextField.text != "" || passwordTextField.text != "" {
             Auth.auth().createUser(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (result, error) in
