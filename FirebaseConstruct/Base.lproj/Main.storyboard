@@ -59,6 +59,9 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hvC-to-Yq0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1j-nb-Dfg">
                                         <rect key="frame" x="0.0" y="55" width="335" height="40"/>
@@ -69,6 +72,10 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWt-mJ-0t2"/>
+                                            <action selector="registerBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ln6-8t-15x"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -96,6 +103,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="feC-lO-LsQ" id="owy-s6-bN5"/>
+                        <outlet property="usernameTextField" destination="fyM-w8-nRt" id="vw5-kc-Pmz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,10 +179,16 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveBtnWasPressed:" destination="rND-Ww-LvA" eventType="touchUpInside" id="KHG-Zr-0lR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g14-b8-ItQ">
                                 <rect key="frame" x="20" y="60" width="335" height="30"/>
                                 <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutBtnWasPressed:" destination="rND-Ww-LvA" eventType="touchUpInside" id="vgx-yv-43s"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -199,6 +216,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cW6-yz-uKF"/>
                     </view>
+                    <connections>
+                        <outlet property="bioTextView" destination="uil-6W-YQ7" id="sUa-td-67E"/>
+                        <outlet property="cityTextField" destination="a4D-5h-nSD" id="Z63-dn-rBx"/>
+                        <outlet property="nameTextField" destination="vLo-rn-gNt" id="thG-zc-317"/>
+                        <outlet property="profileImageView" destination="Pig-1q-uuO" id="Zgp-aN-hsq"/>
+                        <outlet property="webTextField" destination="TtV-6J-Ntf" id="FIu-Eq-Ok6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YfS-VF-q8g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
