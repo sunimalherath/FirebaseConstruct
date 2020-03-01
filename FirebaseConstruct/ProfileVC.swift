@@ -50,5 +50,44 @@ class ProfileVC: UIViewController {
             print(error)
         }
     }
+    @IBAction func browseBtnWasPressed(_ sender: Any) {
+        pickPhoto()
+    }
     
+}
+
+extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    private func pickPhoto() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else {
+            print(info)
+            return
+        }
+        profileImageView.image = image
+        self.dismiss(animated: true, completion: nil)
+        imageUpload()
+    }
+    
+    private func imageUpload() {
+        let userId = Auth.auth().currentUser?.uid
+        
+        let imageData = profileImageView.image?.jpegData(compressionQuality: 0.4)
+        let storageRef = Storage.storage().reference().child("images/" + userId! + ".jpg")
+        if let uploadData = imageData {
+            storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    print(error!)
+                }
+            }
+        }
+    }
 }
